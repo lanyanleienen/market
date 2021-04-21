@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package go.micro.service.market;
+
+service Market {
+	rpc CreateMarket(MarketInfo) returns (MarketID){}
+	rpc FindMarketByID(MarketID) returns (MarketInfo){}
+}
+
+message MarketInfo{
+	int64 id = 1;
+	string code = 2;
+	string first_name = 3;
+}
+
+message MarketID {
+	int64 market_id = 1;
+}
